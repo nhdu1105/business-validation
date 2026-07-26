@@ -9,7 +9,7 @@
   "plugins": [
     {
       "name": "edtech-k12-vn",
-      "source": "./plugins/edtech-k12-vn",
+      "source": "./",
       "description": "Pipeline 6 skill cho du an EdTech K-12 Viet Nam: project-context (bo nho du an), industry-research, inspire-idea, assess-idea, review-business-model, create-backlog. Moi skill dua tren bang chung thuc nghiem va ly thuyet da duoc kiem chung.",
       "version": "0.1.0",
       "author": {
