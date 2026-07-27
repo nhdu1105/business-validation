@@ -1,6 +1,7 @@
 ---
 name: create-backlog
-description: Biến một ý tưởng MMO đã được pursue (từ mmo-assess-idea) và mô hình kinh doanh đã chọn thành lộ trình triển khai thực tế. Nếu ý tưởng thuộc dạng phần mềm/game/app/tool tự động hoá — xuất backlog ưu tiên rồi tài liệu đặc tả kỹ thuật (SPEC.md) sẵn sàng để Claude Code lập trình không cần đoán. Nếu ý tưởng thuộc dạng sáng tạo/vận hành thủ công (content creation, affiliate marketing, dropshipping, freelancing, xây kênh, xây cộng đồng...) — xuất file lộ trình chi tiết (ROADMAP.md) với timeline, mốc (milestone), đầu vào/đầu ra cần đạt, và tiêu chí chấm kết quả ở mỗi mốc. Dùng skill này khi người dùng muốn tạo backlog, user story, epic, phạm vi MVP, kế hoạch phát triển, PRD, spec, lộ trình thực hiện, kế hoạch hành động, hoặc hỏi "nên làm gì trước", hoặc muốn tài liệu để Claude Code có thể trực tiếp lập trình. Đây là skill hai pha bắt buộc: pha 1 luôn xuất bản kế hoạch/backlog để người dùng xác nhận, pha 2 (chỉ sau khi xác nhận rõ ràng) mới xuất tài liệu triển khai đầy đủ.
+description: >-
+  Biến một ý tưởng MMO đã được pursue (từ assess-idea) và mô hình kinh doanh đã chọn thành lộ trình triển khai thực tế. Nếu ý tưởng thuộc dạng phần mềm/game/app/tool tự động hoá, xuất backlog ưu tiên rồi tài liệu đặc tả kỹ thuật (SPEC.md) sẵn sàng để Claude Code lập trình không cần đoán. Nếu ý tưởng thuộc dạng sáng tạo/vận hành thủ công (content creation, affiliate marketing, dropshipping, freelancing, xây kênh, xây cộng đồng...), xuất file lộ trình chi tiết (ROADMAP.md) với timeline, mốc (milestone), đầu vào/đầu ra cần đạt, và tiêu chí chấm kết quả ở mỗi mốc. Dùng skill này khi người dùng muốn tạo backlog, user story, epic, phạm vi MVP, kế hoạch phát triển, PRD, spec, lộ trình thực hiện, kế hoạch hành động, hoặc hỏi "nên làm gì trước", hoặc muốn tài liệu để Claude Code có thể trực tiếp lập trình. Đây là skill hai pha bắt buộc - pha 1 luôn xuất bản kế hoạch/backlog để người dùng xác nhận, pha 2 (chỉ sau khi xác nhận rõ ràng) mới xuất tài liệu triển khai đầy đủ.
 ---
 
 # Create Backlog / Roadmap — Từ quyết định đến kế hoạch có thể thực thi
@@ -9,7 +10,7 @@ Chuyển hoá mọi thứ ở thượng nguồn (ý tưởng được pursue, m�
 
 ## Đầu vào
 
-Đọc `mmo-project-context.md` — ý tưởng đã pursue (I#), mô hình kinh doanh, ràng buộc của người dùng (vốn, thời gian rảnh/tuần, kỹ năng, solo hay có team), và giả định rủi ro nhất cần kiểm chứng. Nếu chưa có ý tưởng nào được pursue hoặc chưa chọn mô hình kinh doanh, nói rõ bước nào ở thượng nguồn còn thiếu; vẫn có thể làm nếu người dùng khăng khăng muốn (đánh dấu kế hoạch là "pre-validation").
+Đọc `project-context.md` — ý tưởng đã pursue (I#), mô hình kinh doanh, ràng buộc của người dùng (vốn, thời gian rảnh/tuần, kỹ năng, solo hay có team), và giả định rủi ro nhất cần kiểm chứng. Nếu chưa có ý tưởng nào được pursue hoặc chưa chọn mô hình kinh doanh, nói rõ bước nào ở thượng nguồn còn thiếu; vẫn có thể làm nếu người dùng khăng khăng muốn (đánh dấu kế hoạch là "pre-validation").
 
 ## Bước 0 — Phân loại dạng ý tưởng (bắt buộc, làm trước mọi thứ khác)
 
@@ -19,7 +20,7 @@ Xác định vòng lặp cốt lõi của ý tưởng thuộc nhóm nào:
 - **Nhóm B — Sáng tạo/Vận hành thủ công**: cốt lõi là con người thực hiện lặp lại (sản xuất content, chạy chiến dịch affiliate, xây kênh TikTok/YouTube, dropshipping vận hành bằng nền tảng có sẵn (Shopify/TikTok Shop), freelancing, xây cộng đồng, bán khoá học...) — không có deliverable là phần mềm tự viết. → đi theo **Track B** (Lộ trình chi tiết — ROADMAP.md).
 - **Ý tưởng lai** (ví dụ: kênh content có kèm một tool nhỏ tự chế để hỗ trợ): tách thành hai phần, chạy Track B cho phần vận hành/sáng tạo và Track A (thu gọn) cho phần tool — nói rõ với người dùng bạn đang tách như vậy.
 
-Nếu không rõ ý tưởng thuộc nhóm nào từ mô tả trong `mmo-project-context.md`, hỏi ngắn gọn một câu trước khi tiếp tục.
+Nếu không rõ ý tưởng thuộc nhóm nào từ mô tả trong `project-context.md`, hỏi ngắn gọn một câu trước khi tiếp tục.
 
 ---
 
@@ -70,7 +71,7 @@ Quy tắc viết spec:
 - Khi một quyết định sản phẩm bị bỏ ngỏ ở pha 1 mà người dùng không quyết định, chọn phương án đơn giản nhất và ghi lại trong mục `## Quyết định đưa ra trong spec này` ở đầu tài liệu để không có gì bị ngầm giả định.
 - Giữ đúng độ tin cậy của cơ chế kiếm tiền/giữ chân người dùng: nếu vòng lặp cốt lõi là, ví dụ, một hệ thống thưởng/retention loop, đặc tả rõ luật vận hành thật (dù đơn giản) — không để cơ chế quan trọng này là "TBD".
 
-Kết thúc bằng đề nghị cập nhật `mmo-project-context.md` với trạng thái backlog và tên file spec.
+Kết thúc bằng đề nghị cập nhật `project-context.md` với trạng thái backlog và tên file spec.
 
 ---
 
@@ -91,7 +92,7 @@ Trình bày trước một bảng mốc rút gọn để người dùng xác nh�
 | G1: ... | Tuần 1-2 | ... | ... |
 ```
 
-Ranh giới quan trọng nhất cần vẽ rõ: **giai đoạn kiểm chứng giả định rủi ro nhất** (từ mmo-assess-idea) phải nằm sớm nhất có thể, rẻ nhất có thể — không lao vào sản xuất/mở rộng quy mô trước khi giả định đó được kiểm chứng. Sau khi trình bày khung mốc, **dừng lại và hỏi người dùng xác nhận** nhịp độ/thời lượng trước khi viết lộ trình chi tiết đầy đủ.
+Ranh giới quan trọng nhất cần vẽ rõ: **giai đoạn kiểm chứng giả định rủi ro nhất** (từ assess-idea) phải nằm sớm nhất có thể, rẻ nhất có thể — không lao vào sản xuất/mở rộng quy mô trước khi giả định đó được kiểm chứng. Sau khi trình bày khung mốc, **dừng lại và hỏi người dùng xác nhận** nhịp độ/thời lượng trước khi viết lộ trình chi tiết đầy đủ.
 
 ### Phase 2 — Lộ trình chi tiết (chỉ sau khi xác nhận)
 
@@ -116,4 +117,4 @@ Quy tắc viết lộ trình:
 - Nhịp độ tuần phải khớp với số giờ/tuần người dùng đã xác nhận ở bước hỏi trước — một lộ trình đòi hỏi 4 giờ/ngày cho người chỉ có 1 giờ/tối là một lộ trình vô dụng dù nhìn đẹp trên giấy.
 - Giai đoạn đầu luôn là giai đoạn kiểm chứng rẻ nhất giả định rủi ro nhất, không phải giai đoạn "xây dựng thương hiệu quy mô lớn" — mở rộng quy mô chỉ nên xuất hiện ở các giai đoạn sau, sau go/no-go đầu tiên.
 
-Kết thúc bằng đề nghị cập nhật `mmo-project-context.md` với trạng thái lộ trình và tên file ROADMAP.md.
+Kết thúc bằng đề nghị cập nhật `project-context.md` với trạng thái lộ trình và tên file ROADMAP.md.
