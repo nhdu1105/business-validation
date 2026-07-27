@@ -1,8 +1,8 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
-  "name": "edtech-k12-vn",
+  "name": "business-",
   "version": "0.1.0",
-  "description": "Pipeline 6 skill ho tro xay dung va tham dinh y tuong nen tang EdTech K-12 tai Viet Nam, tu nghien cuu thi truong den backlog san sang cho Claude Code. Cac skill nghien cuu va tham dinh deu dua tren bang chung thuc nghiem (co xep hang do tin cay) va ly thuyet da duoc kiem chung: Jobs-to-be-Done, Desirability-Feasibility-Viability, RICE, Business Model Canvas.",
+  "description": "Pipeline 6 skill cho viec len y tuong kinh doanh tai Viet Nam: project-context (bo nho du an), industry-research, inspire-idea, assess-idea, review-business-model, create-backlog. Moi skill dua tren bang chung thuc nghiem va ly thuyet da duoc kiem chung.",
   "author": {
     "name": "nhdu1105"
   },
@@ -10,9 +10,9 @@
   "repository": "https://github.com/nhdu1105/edtech-business-validation",
   "license": "MIT",
   "keywords": [
-    "edtech",
+    "startup",
     "vietnam",
-    "k12",
+    "business",
     "market-research",
     "product-discovery",
     "business-validation"
