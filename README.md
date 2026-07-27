@@ -1,10 +1,10 @@
-# EdTech K-12 Việt Nam — Bộ Skill Thẩm Định & Phát Triển Ý Tưởng cho Claude Code
+# Bộ Skill Thẩm Định & Phát Triển Ý Tưởng Kinh doanh tại Việt Nam cho Claude Code
 
-Một **plugin marketplace** cho Claude Code, đóng gói 6 skill hoạt động như một *pipeline* liền mạch để phát triển và thẩm định ý tưởng nền tảng EdTech K-12 tại thị trường Việt Nam — từ nghiên cứu thị trường đến backlog sẵn sàng cho Claude Code lập trình.
+Một **plugin marketplace** cho Claude Code, đóng gói 6 skill hoạt động như một *pipeline* liền mạch để phát triển và thẩm định ý tưởng kinh doanh tại thị trường Việt Nam — từ nghiên cứu thị trường đến backlog sẵn sàng cho Claude Code lập trình.
 
 Toàn bộ skill nghiên cứu và thẩm định đều được thiết kế để dựa trên **bằng chứng thực nghiệm** (có xếp hạng độ tin cậy nguồn) và **lý thuyết đã được kiểm chứng** (Jobs-to-be-Done, Desirability–Feasibility–Viability, RICE, Business Model Canvas).
 
-Repo: https://github.com/nhdu1105/edtech-business-validation
+Repo: https://github.com/nhdu1105/business-validation
 
 ---
 
@@ -27,9 +27,9 @@ Luồng chuẩn: `project-context` (nền) → `industry-research` → `inspire-
 
 ## Đặc điểm thiết kế
 
-- **Xếp hạng độ tin cậy nguồn**: A (nghiên cứu peer-review / số liệu chính thức GSO, Bộ GD-ĐT, World Bank), B (báo cáo ngành uy tín), C (báo chí / tuyên bố một công ty). Không xây kết luận quan trọng chỉ trên nguồn C.
+- **Xếp hạng độ tin cậy nguồn**: A (nghiên cứu peer-review), B (báo cáo ngành uy tín), C (báo chí / tuyên bố một công ty). Không xây kết luận quan trọng chỉ trên nguồn C.
 - **Ưu tiên bằng chứng Việt Nam** rồi mới đến Đông Nam Á → Á → toàn cầu, kèm lập luận khả năng chuyển giao (transferability) khi dùng bằng chứng nước ngoài.
-- **Bám thực tế thị trường Việt**: người trả tiền ≠ người dùng (phụ huynh trả — học sinh dùng — điểm thi là động lực mua), thị trường dạy thêm và quy định của nó, Zalo là kênh phụ huynh, thanh toán MoMo/ZaloPay thay vì chỉ thẻ, quy định bảo vệ dữ liệu trẻ vị thành niên. Skill nghiên cứu được hướng dẫn tìm kiếm cả bằng tiếng Việt.
+- **Bám thực tế thị trường Việt**: Hành vi người dùng, mức độ sẵn lòng trả tiền, liệu có cách khác để người dùng đat được mục đích không. Skill nghiên cứu được hướng dẫn tìm kiếm cả bằng tiếng Việt.
 - **`assess-idea` được viết để LOẠI ý tưởng** — tối đa giữ 2–3 ý tưởng, có bộ chặn thiên kiến (halo effect, sunk-cost, lạc quan quá mức).
 - **`create-backlog` có cổng hai pha**: chỉ tạo `SPEC.md` sau khi bạn xác nhận phạm vi backlog.
 
@@ -40,24 +40,24 @@ Luồng chuẩn: `project-context` (nền) → `industry-research` → `inspire-
 **1. Trong Claude Code, thêm marketplace:**
 
 ```
-/plugin marketplace add nhdu1105/edtech-business-validation
+/plugin marketplace add nhdu1105/business-validation
 ```
 
 **2. Cài plugin:**
 
 ```
-/plugin install edtech-k12-vn@edtech-business-validation
+/plugin install business-validation@business-validation
 ```
 
-Cú pháp là `<tên-plugin>@<tên-marketplace>`. Tên marketplace lấy từ trường `name` trong `marketplace.json` (ở đây là `edtech-business-validation`).
+Cú pháp là `<tên-plugin>@<tên-marketplace>`. Tên marketplace lấy từ trường `name` trong `marketplace.json` (ở đây là `business-validation`).
 
-**3. Kiểm tra:** hỏi Claude Code *"nghiên cứu thị trường EdTech K-12 Việt Nam giúp tôi"* — skill `industry-research` sẽ được kích hoạt.
+**3. Kiểm tra:** hỏi Claude Code *"nghiên cứu thị trường với ngành ... tại Việt Nam giúp tôi"* — skill `industry-research` sẽ được kích hoạt.
 
 ### Cài thử tại máy (không cần push)
 
 ```
-/plugin marketplace add /đường-dẫn/tới/edtech-business-validation
-/plugin install edtech-k12-vn@edtech-business-validation
+/plugin marketplace add /đường-dẫn/tới/business-validation
+/plugin install business-validation@business-validation
 ```
 
 ---
@@ -65,11 +65,11 @@ Cú pháp là `<tên-plugin>@<tên-marketplace>`. Tên marketplace lấy từ tr
 ## Cấu trúc repo
 
 ```
-edtech-business-validation/
+business-validation/
 ├── .claude-plugin/
 │   └── marketplace.json          # Registry marketplace (bắt buộc ở gốc repo)
 ├── plugins/
-│   └── edtech-k12-vn/
+│   └── business/validation/
 │       ├── .claude-plugin/
 │       │   └── plugin.json        # Manifest của plugin
 │       └── skills/
