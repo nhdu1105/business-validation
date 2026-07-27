@@ -1,16 +1,16 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
-  "name": "edtech-business-validation",
+  "name": "business-validation",
   "version": "0.1.0",
-  "description": "Marketplace chua bo skill xay dung va tham dinh y tuong nen tang EdTech K-12 tai Viet Nam: nghien cuu thi truong, len y tuong, tham dinh, mo hinh kinh doanh va tao backlog.",
+  "description": "Marketplace chua bo skill xay dung va tham dinh y tuong kinh doanh tai Viet Nam: nghien cuu thi truong, len y tuong, tham dinh, mo hinh kinh doanh va tao backlog.",
   "owner": {
     "name": "nhdu1105"
   },
   "plugins": [
     {
-      "name": "edtech-k12-vn",
+      "name": "business-validation",
       "source": "./",
-      "description": "Pipeline 6 skill cho du an EdTech K-12 Viet Nam: project-context (bo nho du an), industry-research, inspire-idea, assess-idea, review-business-model, create-backlog. Moi skill dua tren bang chung thuc nghiem va ly thuyet da duoc kiem chung.",
+      "description": "Pipeline 6 skill cho viec len y tuong kinh doanh tai Viet Nam: project-context (bo nho du an), industry-research, inspire-idea, assess-idea, review-business-model, create-backlog. Moi skill dua tren bang chung thuc nghiem va ly thuyet da duoc kiem chung.",
       "version": "0.1.0",
       "author": {
         "name": "nhdu1105"
