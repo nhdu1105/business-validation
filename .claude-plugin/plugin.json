@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
-  "name": "business-",
+  "name": "business-validation",
   "version": "0.1.0",
   "description": "Pipeline 6 skill cho viec len y tuong kinh doanh tai Viet Nam: project-context (bo nho du an), industry-research, inspire-idea, assess-idea, review-business-model, create-backlog. Moi skill dua tren bang chung thuc nghiem va ly thuyet da duoc kiem chung.",
   "author": {
