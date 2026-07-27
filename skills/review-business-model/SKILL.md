@@ -1,64 +1,60 @@
 ---
-name: project-context
+name: review-business-model
 description: >-
-  Khởi tạo, đọc, hoặc cập nhật file project-context.md, đóng vai trò nguồn thông tin duy nhất (single source of truth) cho một dự án kiếm tiền online (MMO) của người dùng - game indie, affiliate, dropshipping, content, freelance, khoá học, crypto... Dùng skill này bất cứ khi nào người dùng bắt đầu một phiên làm việc mới về dự án MMO của họ, upload hoặc nhắc tới project-context.md, hỏi "đang ở đâu rồi", muốn tóm tắt tình trạng dự án, hoặc bất cứ khi nào một skill khác trong pipeline MMO (market-research, inspire-idea, assess-idea, review-business-model, create-backlog) tạo ra output cần được lưu vào bộ nhớ dự án. Cũng dùng khi người dùng đưa ra một quyết định (chọn một ý tưởng, xác nhận một mô hình kinh doanh, huỷ một hướng đi) mà các phiên sau cần nhớ lại.
+  Thiết kế và đánh giá mô hình kinh doanh cho một ý tưởng MMO (kiếm tiền online) đã được lựa chọn từ assess-idea - lựa chọn cơ chế doanh thu, Business Model Canvas, chiến lược giá/hoa hồng, và phác thảo unit economics. Dùng skill này bất cứ khi nào người dùng hỏi về mô hình kinh doanh, cách kiếm tiền, doanh thu, giá cả, "làm sao để kiếm tiền từ cái này", so sánh ads vs affiliate vs bán sản phẩm vs subscription, unit economics, CAC/LTV, hoặc muốn review/stress-test xem sản phẩm/kênh có khả thi về mặt thương mại không. Kích hoạt cả với những câu hỏi thường ngày như "nên tính phí kiểu gì", "ngách này nên kiếm tiền qua ads hay affiliate", hoặc "mô hình này có ổn không".
 ---
 
-# Project Context — Bộ nhớ của pipeline MMO
+# Review Business Model — Kiến trúc thương mại cho ý tưởng MMO
 
-Skill này duy trì `project-context.md`, nguồn thông tin duy nhất cho dự án kiếm tiền online của người dùng. Các phiên làm việc của Claude không có bộ nhớ giữa các hội thoại, nên file này là cách toàn bộ pipeline (nghiên cứu thị trường → sinh ý tưởng → đánh giá → mô hình kinh doanh → backlog/lộ trình) mang quyết định từ phiên này sang phiên khác. Mọi skill khác trong pipeline đọc file này làm đầu vào và ghi thêm vào nó như đầu ra.
+Đề xuất một mô hình kinh doanh phù hợp với *ý tưởng cụ thể đã chọn* và thực tế của ngách/thị trường MMO đó — không phải một playbook SaaS chung chung. Sự thật cấu trúc quan trọng nhất cần xác định ngay từ đầu: **ai thực sự là người trả tiền để tạo ra doanh thu, và người đó có phải là người dùng/khán giả cuối hay không**. Trong nhiều mảng MMO, người mang lại doanh thu không phải là người dùng cuối (nhà quảng cáo trả theo lượt hiển thị/click, mạng affiliate trả hoa hồng theo đơn hàng, App Store/nền tảng ăn phần trăm giao dịch) — mô hình phải phù hợp với việc *ai thực sự trả tiền*, và giá/hoa hồng phải neo theo chuẩn thực tế của ngách đó, không phải theo trực giác hay theo chuẩn SaaS phương Tây.
 
-## Vì sao điều này quan trọng
+## Đầu vào
 
-Không có file ngữ cảnh chung, mỗi skill sẽ tự suy diễn lại giả định từ đầu, mâu thuẫn với quyết định trước đó, và bắt người dùng phải giải thích lại dự án của họ mỗi phiên. Có file này, skill đánh giá ý tưởng biết những phát hiện nghiên cứu nào đã tồn tại, skill lộ trình/backlog biết mô hình kinh doanh nào đã được chọn, và không có gì âm thầm bị mất. Coi file này là "chủ yếu chỉ thêm vào" (append-mostly): quyết định được cập nhật, nhưng lịch sử và lý do được giữ lại để người dùng luôn thấy được *vì sao* một điều gì đó đã được quyết định.
+Đọc `project-context.md` — đặc biệt là ý tưởng đã pursue (I#), các phát hiện nghiên cứu (F#), và ràng buộc của người dùng (ngân sách, thời gian, kỹ năng). Nếu chưa có ý tưởng nào được chọn, nói rõ rằng mô hình chỉ có thể phác thảo theo từng ý tưởng ứng viên, và hoặc làm vậy hoặc gợi ý hoàn thành assess-idea trước. Search dữ liệu hiện tại khi mô hình phụ thuộc vào nó (mức hoa hồng chuẩn của mạng affiliate, giá CPM/CPC hiện tại của ngách, chính sách chia doanh thu của nền tảng, chính sách phí thanh toán) thay vì khẳng định từ trí nhớ — các con số này thay đổi nhanh và lỗi thời rất dễ đánh lừa unit economics.
 
-## Cấu trúc file chuẩn
+## Bước 1 — Sinh 2-3 mô hình ứng viên
 
-Khi khởi tạo một dự án mới, tạo `project-context.md` đúng khung sau (điền những gì đã biết, đánh dấu phần còn lại là `TBD`):
+Rút mô hình ứng viên từ các cơ chế doanh thu MMO thực sự đang vận hành, khớp với vòng lặp cốt lõi và các actor của ý tưởng:
+
+- **Ads/CPM-CPC** (quảng cáo hiển thị trong content, app, game; doanh thu đến từ nhà quảng cáo/mạng quảng cáo, không phải người xem — cần khối lượng traffic đủ lớn mới có ý nghĩa)
+- **Affiliate/hoa hồng (CPA/CPS)** (giới thiệu sản phẩm/dịch vụ của bên khác, nhận hoa hồng theo click/lead/đơn hàng; rủi ro nằm ở việc phụ thuộc điều khoản và tỷ lệ trả hoa hồng của mạng affiliate, có thể đổi bất cứ lúc nào)
+- **Bán sản phẩm/dropshipping trực tiếp** (khách hàng là người trả tiền trực tiếp; biên lợi nhuận phụ thuộc giá vốn + phí vận chuyển + phí nền tảng bán hàng)
+- **Freemium → IAP/Premium** (lớp miễn phí để thu hút; nói rõ điều gì khiến người dùng chuyển đổi trả phí — với game/app thường là tiện ích/tiến độ, không phải sự thuận tiện đơn thuần)
+- **Subscription/Membership** (Patreon-style, cộng đồng trả phí định kỳ, hoặc SaaS/tool nhỏ thu phí tháng)
+- **Bán sản phẩm số/khoá học/dịch vụ tư vấn** (info product, template, khoá học dựa trên chuyên môn đã xây dựng được qua content/audience)
+- **Sponsorship/hợp tác thương hiệu** (thu nhập từ brand deal dựa trên lượng khán giả/độ tin cậy đã xây dựng — đòi hỏi quy mô audience tối thiểu mới đủ hấp dẫn nhãn hàng)
+- **Marketplace/take-rate** (kết nối hai bên và ăn phần trăm giao dịch — vấn đề khó nhất luôn là cold-start phía cung)
+- **Hybrid** (ví dụ: content miễn phí để kéo traffic → gắn affiliate link → upsell sản phẩm/khoá học riêng; đây là pattern rất phổ biến và thường bền hơn một nguồn doanh thu đơn lẻ vì không phụ thuộc hoàn toàn vào một nền tảng/đối tác)
+
+Với mỗi ứng viên, viết một đoạn: tiền chảy như thế nào, ai thực sự là người trả tiền/tạo ra doanh thu, và điều khó nhất để mô hình này vận hành được (thường là: đạt đủ khối lượng traffic, giữ được tài khoản không bị khoá/demonetize, hoặc đàm phán được hoa hồng đủ tốt).
+
+## Bước 2 — So sánh và đề xuất
+
+So sánh các ứng viên theo: mức độ khớp với vòng lặp cốt lõi của ý tưởng đã chọn, bằng chứng về khả năng/sẵn sàng trả tiền của bên tạo doanh thu (F#), khả thi về phân phối/traffic với năng lực hiện tại của người dùng, cấu trúc rủi ro theo thời gian (thuật toán đổi, ngách bão hoà, mùa vụ, chính sách nền tảng siết lại — mô hình nào sống sót qua các cú sốc này), và rủi ro chính sách/pháp lý (điều khoản mạng affiliate, chính sách quảng cáo, quy định thuế thu nhập online, các ngách nhạy cảm như tài chính/sức khoẻ/crypto cần verify quy định hiện tại). Đề xuất một mô hình chính (có thể kèm hướng tiến hoá ở giai đoạn 2, ví dụ bắt đầu bằng affiliate rồi tiến tới bán sản phẩm riêng khi đã có audience) và nói thẳng vì sao các mô hình khác bị loại.
+
+## Bước 3 — Business Model Canvas cho mô hình được đề xuất
+
+Điền đầy đủ Business Model Canvas (phân khúc khách hàng, giá trị đề xuất theo từng phân khúc — nếu người trả tiền khác người dùng cuối thì viết riêng hai giá trị đề xuất; kênh phân phối; quan hệ khách hàng; dòng doanh thu; nguồn lực chính; hoạt động chính; đối tác chính; cơ cấu chi phí). Các khối cần làm rõ đặc thù MMO:
+
+- **Kênh phân phối**: nêu rõ kênh nào là "canh bạc chính" để thu hút người dùng/traffic — organic (SEO, TikTok/YouTube tự nhiên, cộng đồng) hay trả phí (Facebook/Google/TikTok Ads) — và mức độ phụ thuộc vào thuật toán/chính sách của MỘT nền tảng duy nhất (rủi ro tập trung).
+- **Thanh toán/nhận tiền**: phương thức phù hợp với đối tượng mục tiêu (MoMo/ZaloPay/chuyển khoản nếu là khách Việt Nam; Stripe/PayPal/thẻ quốc tế nếu là mảng toàn cầu như affiliate quốc tế hay bán trên Steam/App Store); với affiliate/ads, ghi rõ chu kỳ và ngưỡng thanh toán tối thiểu của mạng lưới (net-30/net-60, ngưỡng rút tiền) vì nó ảnh hưởng trực tiếp dòng tiền.
+- **Cơ cấu chi phí**: gắn cờ các chi phí lặp lại dễ bị bỏ sót — chi phí traffic trả phí liên tục, phí công cụ/phần mềm, phí nền tảng/hoa hồng bị nền tảng ăn (App Store 30%, sàn TMĐT phí sàn...), chi phí sản xuất content liên tục nếu ý tưởng cần.
+
+## Bước 4 — Phác thảo unit economics
+
+Xây một phác thảo đơn giản, trung thực, từ dưới lên với các giả định được nêu rõ (khoảng số, không phải con số giả vờ chính xác):
+giá/hoa hồng mỗi đơn vị (neo theo chuẩn thực tế của ngách) → biên lợi nhuận → CAC theo từng kênh (ước tính kèm lý do) → thời gian giữ chân/vòng đời kỳ vọng dựa trên rủi ro cấu trúc (bão hoà, thuật toán đổi, mùa vụ) → LTV → LTV:CAC. Nếu phác thảo chỉ hoạt động được với các giả định "anh hùng" (ví dụ: cần tỷ lệ viral/organic reach cao bất thường, hoặc cần commission rate cao hơn mức chuẩn ngách đang trả), nói thẳng điều đó — một mô hình cần 10% tỷ lệ chuyển đổi và không có rủi ro bị nền tảng khoá tài khoản trong một ngách vốn dĩ hay bị siết chính sách là một ảo tưởng, và giá trị của skill này là nói ra điều đó trước khi người dùng đổ công sức vào xây dựng.
+
+## Cấu trúc output
 
 ```markdown
-# Dự án MMO — Ngữ cảnh dự án
-Cập nhật lần cuối: [ngày] · Giai đoạn: [khám phá | kiểm chứng | xây dựng | vận hành]
-
-## 1. Tổng quan dự án
-- Mảng MMO: [game indie / affiliate / dropshipping / content / freelance / khoá học / crypto / khác]
-- Thị trường mục tiêu: [Việt Nam / khu vực / toàn cầu]
-- Hướng đi một dòng: [TBD cho đến khi một ý tưởng được chọn]
-- Ràng buộc của người dùng: [ngân sách, số giờ/tuần có thể dành ra, solo hay có team, kỹ năng sẵn có, kỹ thuật hay không kỹ thuật — hỏi nếu chưa biết]
-
-## 2. Các phát hiện nghiên cứu chính (từ market-research)
-[Các phát hiện đánh số F1, F2, ... — mỗi phát hiện một dòng + hạng bằng chứng A/B/C + nguồn]
-
-## 3. Danh sách ý tưởng rút gọn (từ inspire-idea + assess-idea)
-| ID | Ý tưởng | Trạng thái (pursue/park/killed) | Vì sao |
-
-## 4. Nhật ký quyết định
-[Các mục có ngày: quyết định gì, ai quyết, dựa trên bằng chứng nào]
-
-## 5. Mô hình kinh doanh (từ review-business-model)
-[Tóm tắt mô hình đã chọn — người trả tiền, cơ chế doanh thu, mức giá/hoa hồng neo theo thị trường — hoặc TBD]
-
-## 6. Trạng thái backlog/lộ trình (từ create-backlog)
-- Dạng ý tưởng: [phần mềm/game (Track A) hay sáng tạo/vận hành thủ công (Track B)]
-[Link/tóm tắt các hạng mục backlog đã xác nhận, hoặc tên file SPEC.md / ROADMAP.md đã tạo, hoặc TBD]
-
-## 7. Câu hỏi bỏ ngỏ & giả định rủi ro nhất
-[Điều gì còn cần kiểm chứng trước khi xây dựng/mở rộng quy mô]
-
-## 8. Cảnh báo & bài học rút ra
-[Các claim thu nhập/case-study đã bị bác bỏ vì không kiểm chứng được, các thay đổi chính sách nền tảng cần theo dõi, các rủi ro đã biết]
+# Review mô hình kinh doanh — [tên ý tưởng]
+## 1. Các mô hình ứng viên đã xem xét (kèm vấn đề khó nhất của mỗi mô hình)
+## 2. Đề xuất & lý do
+## 3. Business Model Canvas (mô hình được đề xuất)
+## 4. Logic giá/hoa hồng & các mốc neo
+## 5. Phác thảo unit economics (giả định được gắn nhãn rõ)
+## 6. Top 3 rủi ro thương mại & cách kiểm chứng/giảm rủi ro với chi phí thấp nhất
 ```
 
-## Quy trình làm việc
-
-1. **Đầu phiên**: Nếu người dùng đã upload `project-context.md`, đọc toàn bộ trước khi làm bất cứ điều gì khác và tóm tắt 3-4 câu "đây là tình trạng hiện tại". Nếu họ nhắc tới dự án nhưng chưa có file, đề nghị khởi tạo một file — chỉ cần hỏi về ràng buộc của người dùng (khoảng ngân sách, số giờ/tuần, solo hay có team, kỹ năng kỹ thuật hay không), vì mọi phần còn lại sẽ được điền dần khi pipeline chạy.
-2. **Sau khi một skill trong pipeline tạo ra output**: Chắt lọc output vào đúng mục liên quan. Các phát hiện trở thành mục `F#` đánh số để các skill sau có thể trích dẫn ("Ý tưởng I3 giải quyết F2 và F7"). Không dán nguyên báo cáo đầy đủ vào — file ngữ cảnh phải giữ dưới khoảng 2 trang, nếu không nó sẽ mất tác dụng. Báo cáo đầy đủ nằm ở các file output riêng (báo cáo nghiên cứu, SPEC.md, ROADMAP.md...).
-3. **Khi người dùng ra quyết định**: Ghi lại vào Nhật ký quyết định kèm ngày và lý do một dòng. Ý tưởng bị killed vẫn ở lại trong bảng, đánh dấu killed — mọi nỗ lực "hồi sinh" sau này phải phản biện lại được lý do killed ban đầu, không được lặng lẽ bỏ qua.
-4. **Luôn xuất toàn bộ file đã cập nhật** (không phải bản diff) dưới dạng `project-context.md` có thể tải xuống, để người dùng lưu vào Claude Project hoặc upload lại ở phiên sau.
-
-## Quy tắc
-
-- Không bao giờ bịa ra phát hiện, quyết định, hoặc ràng buộc không có trong hội thoại hoặc file hiện có. Nếu một mục chưa rõ, giữ nguyên `TBD` — một "sự thật" sai trong bộ nhớ dự án sẽ đầu độc mọi skill ở phía sau.
-- Hạng bằng chứng luôn đi kèm phát hiện: A = số liệu chính thức/nền tảng hoặc nghiên cứu có kiểm chứng, B = báo cáo ngành/case-study đã xác minh được, C = báo chí, blog cá nhân, hoặc claim thu nhập chưa kiểm chứng. Các skill phía sau (đặc biệt assess-idea) cân nhắc theo hạng này — không để một claim C-grade âm thầm biến thành "sự thật" chỉ vì nó nằm trong file ngữ cảnh lâu ngày.
-- Nếu file được upload mâu thuẫn với điều người dùng vừa nói, nêu rõ mâu thuẫn và hỏi cái nào là hiện tại thay vì âm thầm ghi đè.
-- Vì các mảng MMO thay đổi nhanh (thuật toán, chính sách nền tảng, độ bão hoà ngách), khi cập nhật lại một dự án cũ đã lâu không đụng tới, chủ động hỏi xem có phát hiện/số liệu nào trong mục 2 và 8 đã lỗi thời cần research lại không, thay vì mặc định mọi thứ vẫn còn đúng.
+Kết thúc bằng đề nghị cập nhật `project-context.md` (mục 5) và nhật ký quyết định, và nêu rõ mô hình đã chọn sẽ ràng buộc backlog/lộ trình như thế nào (ví dụ: mô hình affiliate cần tracking link/attribution; mô hình freemium cần hệ thống thanh toán + entitlement; mô hình content+sponsorship thuộc Track B của create-backlog trong khi mô hình app/game freemium thuộc Track A) — đây chính xác là thứ mà skill create-backlog sẽ đọc tiếp theo.
