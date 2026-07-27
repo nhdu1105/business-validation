@@ -1,5 +1,5 @@
 ---
-name: mmo-inspire-idea
+name: inspire-idea
 description: Sinh ý tưởng kiếm tiền online (MMO) có căn cứ bằng chứng — không phải brainstorm confetti — dựa trên báo cáo nghiên cứu thị trường đã thực hiện bằng skill mmo-market-research (game indie, affiliate, dropshipping, content, freelance, khoá học, crypto...). Dùng skill này bất cứ khi nào người dùng hỏi xin ý tưởng, tính năng, use case, "có thể làm gì từ nghiên cứu này", brainstorm, cơ hội, hoặc cảm hứng cho một dự án MMO — kể cả những câu hỏi thường ngày như "cho tôi vài ý tưởng từ báo cáo đó", "có thể giải quyết vấn đề gì cho người mua trong ngách này", hoặc "nghĩ giúp tôi vài hướng kiếm tiền từ ngách vừa research". Yêu cầu bắt buộc phải có kết quả nghiên cứu thị trường làm đầu vào; nếu chưa có, hướng dẫn người dùng chạy mmo-market-research trước.
 
 ---
