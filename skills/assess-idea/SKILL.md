@@ -1,5 +1,5 @@
 ---
-name: mmo-assess-idea
+name: assess-idea
 description: Đánh giá và sàng lọc nghiêm túc các ý tưởng kiếm tiền online (MMO) — game indie, affiliate, dropshipping, content, freelance, khoá học, crypto... — về tính khả thi, nhu cầu thật của khách hàng, và mức độ hợp lý về kinh doanh, phân loại thành pursue/park/kill kèm điểm số có căn cứ. Dùng skill này bất cứ khi nào người dùng muốn đánh giá, chấm điểm, xếp hạng, lọc, kiểm chứng, hoặc "sắp xếp" các ý tưởng từ skill mmo-inspire-idea, hoặc hỏi "ý tưởng nào trong số này đáng làm", "ý tưởng này có ổn không", hoặc muốn thu hẹp một danh sách dài lại. Kích hoạt cả khi người dùng chỉ dán một danh sách ý tưởng MMO và hỏi bạn nghĩ sao. Áp dụng phân tích desirability-feasibility-viability và chấm điểm RICE dựa trên bối cảnh, nguồn lực thực tế của người dùng.
 ---
 
