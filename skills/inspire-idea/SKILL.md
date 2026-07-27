@@ -10,7 +10,7 @@ Sinh ra những ý tưởng *có thể truy vết về bằng chứng*, không p
 
 ## Kỷ luật đầu vào
 
-Đọc `mmo-project-context.md` (nếu có) và/hoặc báo cáo nghiên cứu thị trường MMO trước. Nếu không có báo cáo nào trong hội thoại, dừng lại và yêu cầu người dùng chạy skill mmo-market-research trước (hoặc dán các phát hiện vào) — sinh ý tưởng mà không có bằng chứng chỉ tạo ra đúng đống ý tưởng chưa kiểm chứng mà pipeline này muốn tránh.
+Đọc `project-context.md` (nếu có) và/hoặc báo cáo nghiên cứu thị trường MMO trước. Nếu không có báo cáo nào trong hội thoại, dừng lại và yêu cầu người dùng chạy skill mmo-market-research trước (hoặc dán các phát hiện vào) — sinh ý tưởng mà không có bằng chứng chỉ tạo ra đúng đống ý tưởng chưa kiểm chứng mà pipeline này muốn tránh.
 
 Cũng cần ghi nhận ràng buộc thực tế của người dùng (vốn, thời gian rảnh, kỹ năng sẵn có, team hay solo): một người làm một mình, tay ngang, không nên nhận ý tưởng đòi hỏi ê-kíp 5 người quay video mỗi ngày, trừ khi được đánh dấu rõ "cần scale mới làm được".
 
@@ -50,4 +50,4 @@ LUÔN dùng đúng khung thẻ sau cho mỗi ý tưởng:
 
 Ở bước này, hãy generative chứ đừng phán xét — việc đánh giá là công việc của skill đánh giá tiếp theo (assess-idea), lọc sớm sẽ giết chết những ý tưởng độc đáo. Nhưng tuyệt đối không bịa móc bằng chứng: nếu một ý tưởng khiến bạn hào hứng nhưng không có phát hiện nào hỗ trợ, ghi rõ móc bằng chứng là "chưa có — chỉ là trực giác" để bước đánh giá xử lý phù hợp. Cũng cần cảnh giác đặc biệt với các claim thu nhập "kiếm X triệu/tháng" lan truyền trong nghiên cứu MMO — nếu ý tưởng dựa trên một claim như vậy mà chưa được kiểm chứng ở mức B-grade trở lên, phải ghi rõ điều đó trong móc bằng chứng thay vì mặc định coi là sự thật.
 
-Sau khi trình bày các thẻ ý tưởng, đề nghị lưu toàn bộ danh sách vào `mmo-project-context.md` (mục ý tưởng, trạng thái "chưa đánh giá") và gợi ý chạy skill đánh giá ý tưởng (assess-idea) tiếp theo.
+Sau khi trình bày các thẻ ý tưởng, đề nghị lưu toàn bộ danh sách vào `project-context.md` (mục ý tưởng, trạng thái "chưa đánh giá") và gợi ý chạy skill đánh giá ý tưởng (assess-idea) tiếp theo.
