@@ -1,55 +1,55 @@
 ---
-name: assess-idea
-description: Rigorously evaluate and filter EdTech product ideas for feasibility, real customer need, and business alignment, sorting them into pursue / park / kill with evidence-based scoring. Use this skill whenever the user asks to evaluate, assess, prioritize, score, rank, filter, validate, or "sort" ideas, or asks "which of these ideas is worth building", "is this idea any good", or wants to narrow a list down. Trigger even when the user just pastes a list of ideas and asks what you think. Applies desirability-feasibility-viability analysis and RICE scoring against the user's Vietnam K-12 context.
+name: mmo-assess-idea
+description: Đánh giá và sàng lọc nghiêm túc các ý tưởng kiếm tiền online (MMO) — game indie, affiliate, dropshipping, content, freelance, khoá học, crypto... — về tính khả thi, nhu cầu thật của khách hàng, và mức độ hợp lý về kinh doanh, phân loại thành pursue/park/kill kèm điểm số có căn cứ. Dùng skill này bất cứ khi nào người dùng muốn đánh giá, chấm điểm, xếp hạng, lọc, kiểm chứng, hoặc "sắp xếp" các ý tưởng từ skill mmo-inspire-idea, hoặc hỏi "ý tưởng nào trong số này đáng làm", "ý tưởng này có ổn không", hoặc muốn thu hẹp một danh sách dài lại. Kích hoạt cả khi người dùng chỉ dán một danh sách ý tưởng MMO và hỏi bạn nghĩ sao. Áp dụng phân tích desirability-feasibility-viability và chấm điểm RICE dựa trên bối cảnh, nguồn lực thực tế của người dùng.
 ---
 
-# Assess Idea — The Honest Filter
+# Assess Idea — Bộ lọc trung thực
 
-This skill's job is to kill ideas. Most early-stage EdTech ideas fail for predictable, researchable reasons — no real willingness to pay, payer≠user misalignment, unbeatable free alternatives, regulatory exposure, or founder-capacity mismatch. The user is better served by three honestly-scored survivors than fifteen flattered maybes. Do not cheerlead. If every idea scores well, the assessment failed.
+Công việc của skill này là **giết chết ý tưởng**. Phần lớn ý tưởng MMO giai đoạn đầu thất bại vì những lý do có thể dự đoán và kiểm chứng được từ trước: không ai thật sự sẵn sàng trả tiền/click, lệch giữa người mang lại traffic và người trả tiền, có quá nhiều lựa chọn miễn phí không thể đánh bại, rủi ro chính sách/thuật toán nền tảng, hoặc năng lực người sáng lập không khớp với đòi hỏi của ý tưởng. Người dùng được phục vụ tốt hơn với 3 ý tưởng sống sót được chấm điểm trung thực, thay vì 15 ý tưởng được vỗ về khen hay. Không cổ vũ vô căn cứ. Nếu ý tưởng nào cũng điểm cao, nghĩa là việc đánh giá đã thất bại.
 
-## Inputs
+## Đầu vào
 
-Read `project-context.md`, the idea cards (I#), and the research findings (F#). If ideas arrive without evidence hooks or without research context, assess anyway but mark those dimensions "unsupported — desk-validate before trusting this score." Note founder constraints — feasibility is relative to *this founder's* budget, team, and technical capacity, not to a funded startup's.
+Đọc `mmo-project-context.md` (nếu có), các thẻ ý tưởng (I#), và các phát hiện nghiên cứu (F#) từ skill mmo-market-research / mmo-inspire-idea. Nếu ý tưởng đến mà không có móc bằng chứng hoặc không có bối cảnh nghiên cứu, vẫn đánh giá nhưng ghi rõ các chiều đó là "không có căn cứ — cần tự kiểm chứng trước khi tin điểm số này". Ghi nhận ràng buộc của người dùng — tính khả thi phải tương đối với *ngân sách, thời gian, kỹ năng của chính người dùng này*, không phải với một startup có vốn đầu tư.
 
-## Assessment framework
+## Khung đánh giá
 
-Score each idea on three gates, then compute priority. Every score requires a written justification citing evidence (F#) or explicit reasoning — a number without a reason is theater.
+Chấm mỗi ý tưởng theo ba cổng, sau đó tính điểm ưu tiên. Mọi điểm số phải có giải thích viết ra kèm bằng chứng (F#) hoặc lý lẽ rõ ràng — một con số không có lý do chỉ là diễn kịch.
 
-### Gate 1 — Desirability (is the need real?)
-Score 1-5 on evidence strength, not idea attractiveness:
-- Is there **behavioral evidence** of the need (people already paying for a worse substitute — tutors, workbooks, other apps), or only stated/inferred need? Behavioral > stated. People paying for substitutes is the strongest desk-research signal that exists.
-- **Payer test**: does the *payer* (usually the parent) feel this pain enough to pay, regardless of whether the user (student) likes it? Ideas loved by students but invisible to parents score low in Vietnam K-12.
-- **Free-alternative test**: what does the user do today for free (YouTube, Facebook groups, Zalo groups, school itself)? Why would they switch?
+### Cổng 1 — Desirability (nhu cầu có thật không?)
+Chấm 1-5 dựa trên độ mạnh của bằng chứng, không dựa trên độ hấp dẫn của ý tưởng:
+- Có **bằng chứng hành vi** về nhu cầu (người ta đang thực sự trả tiền/dành thời gian cho một giải pháp thay thế tệ hơn — tutorial trả phí, tool khác, kênh khác, sản phẩm tương tự), hay chỉ là nhu cầu được nói ra/suy đoán? Hành vi thật > lời nói. Việc người ta đang trả tiền cho giải pháp thay thế là tín hiệu nghiên cứu bàn giấy mạnh nhất tồn tại.
+- **Kiểm tra người trả tiền/mang lại doanh thu**: người *trả tiền hoặc tạo ra doanh thu* (người mua, nhà quảng cáo trả theo click/conversion, hệ thống thuật toán quyết định phân phối) có thực sự cảm nhận đủ pain để hành động không, bất kể người dùng cuối có thích sản phẩm hay không? Ý tưởng được người xem yêu thích nhưng không tạo ra hành động mua/click/chuyển đổi sẽ chấm điểm thấp.
+- **Kiểm tra giải pháp miễn phí sẵn có**: hôm nay người ta đang làm gì miễn phí (video YouTube free, group Facebook/Zalo, công cụ free, nội dung tự học)? Vì sao họ sẽ chuyển sang trả tiền hoặc dùng giải pháp của bạn?
 
-### Gate 2 — Feasibility (can *this founder* build and distribute it?)
-Score 1-5:
-- Build complexity vs founder's technical capacity and budget; content-production burden (K-12 content localized to the Vietnamese curriculum is expensive and ongoing — flag any idea that quietly requires a content factory).
-- **Distribution feasibility**: how do you reach Vietnamese parents/schools? School B2B sales cycles are long and relationship-driven; parent B2C requires paid acquisition against incumbents. An unbuildable channel fails this gate as surely as unbuildable tech.
-- Regulatory exposure: minors' data (Decree 13/2023 and successors), tutoring regulation, content approval. Search to verify current rules if the idea is regulation-sensitive — don't assess regulatory risk from memory.
+### Cổng 2 — Feasibility (chính người dùng này có làm và phân phối được không?)
+Chấm 1-5:
+- Độ phức tạp khi xây dựng so với năng lực kỹ thuật và ngân sách của người dùng; gánh nặng sản xuất nội dung liên tục (nhiều ý tưởng MMO — content, game live-service, SEO — âm thầm đòi hỏi một "nhà máy nội dung" đều đặn hàng ngày/tuần; gắn cờ rõ nếu ý tưởng cần điều này).
+- **Khả thi về phân phối/traffic**: kênh nào sẽ đưa ý tưởng đến người dùng cuối (SEO, TikTok/YouTube organic, Facebook Ads, ASO, Steam wishlist, email list, mạng affiliate)? Kênh organic phụ thuộc thuật toán có thể sập bất cứ lúc nào; kênh trả phí đòi hỏi vốn UA liên tục. Một kênh phân phối không khả thi làm ý tưởng fail ở cổng này y như công nghệ không khả thi.
+- **Rủi ro chính sách/nền tảng/pháp lý**: chính sách quảng cáo (Google/Facebook/TikTok Ads), điều khoản mạng affiliate, chính sách nền tảng (demonetize, shadow ban, xoá tài khoản), quy định thuế thu nhập online, và với các ngách nhạy cảm (tài chính, sức khoẻ, crypto) — quy định pháp lý cụ thể. Nếu ý tưởng nhạy cảm về chính sách/pháp lý, search để xác minh quy định hiện tại — không đánh giá rủi ro này từ trí nhớ.
 
-### Gate 3 — Viability (does the business math plausibly work?)
-Score 1-5:
-- Sanity-check TAM→SAM→SOM in one short paragraph using research numbers (F#) — bottom-up (number of target students × plausible penetration × price), never top-down percentage grabs.
-- Price anchor: what does the payer currently spend on the nearest substitute (tutoring, cram schools)? Price realism in Vietnam is set by these anchors.
-- Structural churn: K-12 products churn on graduation and exam cycles by design — does the model survive that?
+### Cổng 3 — Viability (bài toán kinh doanh có hợp lý không?)
+Chấm 1-5:
+- Kiểm tra nhanh TAM→SAM→SOM trong một đoạn ngắn dùng số liệu nghiên cứu (F#) — tính từ dưới lên (số lượng khách hàng/người xem tiềm năng mục tiêu × tỷ lệ thâm nhập hợp lý × giá/hoa hồng trung bình), không lấy đại một phần trăm từ trên xuống.
+- Neo giá/hoa hồng: người trả tiền hiện đang chi bao nhiêu cho giải pháp gần nhất (sản phẩm tương tự, hoa hồng chuẩn của ngách đó, giá quảng cáo trung bình)? Tính thực tế về giá/hoa hồng được neo bởi những con số này.
+- Rủi ro cấu trúc: nhiều mảng MMO có tính chu kỳ/rủi ro sập nhanh theo thiết kế (thuật toán đổi, ngách bão hoà, chi phí traffic tăng, mùa vụ) — mô hình có sống sót qua những cú sốc đó không?
 
-### Priority score
-For ideas passing all gates (no dimension ≤2), compute **RICE** (Reach × Impact × Confidence ÷ Effort) to rank them. State the estimate behind each factor — the point of RICE is forcing explicit estimates, not the arithmetic.
+### Điểm ưu tiên
+Với các ý tưởng vượt qua cả ba cổng (không chiều nào ≤2), tính **RICE** (Reach × Impact × Confidence ÷ Effort) để xếp hạng. Nêu rõ ước tính đằng sau mỗi yếu tố — mục đích của RICE là ép ra ước tính rõ ràng, không phải phép tính số học.
 
-## Verdicts
+## Kết luận
 
-Sort into exactly three buckets:
-- **Pursue** (max 2-3): passes all gates, ranked by RICE, each with its **riskiest assumption** and the *cheapest possible test* for it (parent interviews with a script, a landing-page smoke test, a concierge/manual MVP, a Zalo-group pilot). Recommend testing before building — desk assessment is a filter, not validation.
-- **Park**: promising but blocked (needs data, wrong timing, needs scale). State the specific unblock condition.
-- **Kill**: state the kill reason in one blunt sentence. Killed ideas go to the context file marked killed, with reason — so they can't zombie back later without new evidence.
+Phân vào đúng ba nhóm:
+- **Pursue** (tối đa 2-3 ý tưởng): vượt qua cả ba cổng, xếp hạng theo RICE, mỗi ý tưởng kèm **giả định rủi ro nhất** và *cách kiểm chứng rẻ nhất có thể* (đăng thử vài video/bài viết xem traction, chạy quảng cáo test với ngân sách nhỏ, landing page smoke test, làm MVP thủ công/concierge, tham gia group cộng đồng để phỏng vấn nhanh vài người). Khuyến nghị kiểm chứng thực tế trước khi đầu tư xây dựng toàn bộ — đánh giá bàn giấy là một bộ lọc, không phải sự xác nhận.
+- **Park**: có tiềm năng nhưng đang bị chặn (cần thêm dữ liệu, sai thời điểm, cần quy mô mới khả thi). Nêu rõ điều kiện cụ thể để gỡ chặn.
+- **Kill**: nêu lý do giết ý tưởng trong một câu thẳng thắn. Ý tưởng bị giết được ghi vào file ngữ cảnh với trạng thái "killed" kèm lý do — để nó không thể "hồi sinh" sau này mà không có bằng chứng mới.
 
-## Output format
+## Định dạng output
 
-1. A scoring table (idea, D, F, V, RICE, verdict) for scan-ability.
-2. Per-idea verdict blocks with the written justifications — this is where the honesty lives; the table alone is not an assessment.
-3. "Next validation steps" for pursued ideas.
-4. Offer to update `project-context.md` sections 3, 4 (decision log) and 7 (riskiest assumptions).
+1. Một bảng chấm điểm (ý tưởng, D, F, V, RICE, kết luận) để xem nhanh.
+2. Khối kết luận cho từng ý tưởng kèm giải thích viết ra — đây là nơi sự trung thực nằm ở đó; bảng điểm một mình không phải là một đánh giá.
+3. "Bước kiểm chứng tiếp theo" cho các ý tưởng được pursue.
+4. Đề nghị cập nhật `mmo-project-context.md` (nhật ký quyết định và các giả định rủi ro nhất).
 
-## Bias guards
+## Cảnh giác thiên kiến
 
-Actively check yourself for: halo effect from well-written idea cards (score the evidence, not the prose), sunk-cost drift toward ideas the user seems attached to, and optimism inflation (if unsure between two scores, take the lower and say why). If the user pushes back on a kill, engage with their argument on evidence — updating on new information is good; softening on pressure is not.
+Chủ động tự kiểm tra các thiên kiến sau: hiệu ứng hào quang từ thẻ ý tưởng viết hay (chấm bằng chứng, không chấm văn phong), thiên kiến chi phí chìm kéo về ý tưởng người dùng có vẻ đã gắn bó, và lạm phát lạc quan (nếu phân vân giữa hai mức điểm, chọn mức thấp hơn và nói rõ vì sao). Đặc biệt cảnh giác với **thiên kiến "guru MMO"**: nhiều ý tưởng/số liệu hấp dẫn trong mảng này đến từ người bán khoá học/case-study về chính ngách đó — họ có động cơ thổi phồng tiềm năng; không để độ hào hứng của nguồn thông tin ảnh hưởng đến điểm số. Nếu người dùng phản bác một quyết định kill, tranh luận dựa trên bằng chứng của họ — cập nhật khi có thông tin mới là tốt, nhưng nhượng bộ vì áp lực thì không.
