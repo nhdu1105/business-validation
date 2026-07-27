@@ -64,4 +64,4 @@ Ngày · Phạm vi · Tóm tắt mức độ tin cậy
 
 ## Sau khi có báo cáo
 
-Đề xuất lưu các phát hiện đã đánh số vào một file ghi nhớ (ví dụ `mmo-project-context.md`) nếu người dùng muốn tiếp tục nghiên cứu nhiều ngách theo thời gian. Nếu nghiên cứu để lộ những câu hỏi cần kiểm chứng thực tế (thử nghiệm nhỏ, hỏi trực tiếp người trong ngành, chạy thử một tuần), liệt kê dưới mục "Câu hỏi còn bỏ ngỏ" — nghiên cứu trên bàn giấy có giới hạn của nó, và mảng MMO đặc biệt dễ bị lừa bởi các claim thu nhập không kiểm chứng được.
+Đề xuất lưu các phát hiện đã đánh số vào một file ghi nhớ (ví dụ `project-context.md`) nếu người dùng muốn tiếp tục nghiên cứu nhiều ngách theo thời gian. Nếu nghiên cứu để lộ những câu hỏi cần kiểm chứng thực tế (thử nghiệm nhỏ, hỏi trực tiếp người trong ngành, chạy thử một tuần), liệt kê dưới mục "Câu hỏi còn bỏ ngỏ" — nghiên cứu trên bàn giấy có giới hạn của nó, và mảng MMO đặc biệt dễ bị lừa bởi các claim thu nhập không kiểm chứng được.
